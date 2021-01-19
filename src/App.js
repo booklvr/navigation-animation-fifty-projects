@@ -1,8 +1,8 @@
 import React from 'react'
-import placeholder from './components/placeholder'
+import AnimatedNavigation from './components/AnimatedNavigation'
 
 const App = () => {
-  return <placeholder />
+  return <AnimatedNavigation />
 }
 
 export default App
