@@ -1,7 +1,16 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 
 const AnimatedNavigation = () => {
   const [navOpen, setNavOpen] = useState(false)
+  const [leftPosition, setLeftPosition] = useState(0)
+
+  const calculateLeftPosition = (windowHeight) => {
+    return parseFloat(windowHeight * Math.tan((20 * Math.PI) / 180)).toFixed(4)
+  }
+
+  useEffect(() => {
+    setLeftPosition(calculateLeftPosition(window.innerHeight))
+  })
 
   return (
     <Fragment>
@@ -17,7 +26,10 @@ const AnimatedNavigation = () => {
 
       <p className='text'>Mobile Navigation</p>
 
-      <div className={navOpen ? 'nav nav-black visible' : 'nav nav-black '}>
+      <div
+        className={navOpen ? 'nav nav-black visible' : 'nav nav-black '}
+        style={navOpen ? { left: '0px' } : { left: `-${leftPosition}px` }}
+      >
         <div className={navOpen ? 'nav nav-red visible' : 'nav nav-red '}>
           <div className={navOpen ? 'nav nav-white visible' : 'nav nav-white '}>
             <button

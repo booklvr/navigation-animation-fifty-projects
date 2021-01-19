@@ -24,8 +24,8 @@
   top: 0;
   left: 0;
   height: 100vh;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%) skew(-20deg);
+  transition: all 0.2s ease;
 
   &.visible {
     transform: translateX(0);
@@ -35,7 +35,7 @@
     width: 60%;
     max-width: 480px;
     min-width: 320px;
-    transition-delay: 0.4s;
+    transition-delay: 0.3s;
 
     &.visible {
       transition-delay: 0s;
@@ -44,10 +44,10 @@
   &.nav-red {
     background-color: rgb(229, 9, 20);
     width: 95%;
-    transition-delay: 0.2s;
+    transition-delay: 0.15s;
 
     &.visible {
-      transition-delay: 0.2s;
+      transition-delay: 0.15s;
     }
   }
   &.nav-white {
@@ -58,7 +58,7 @@
     transition-delay: 0s;
 
     &.visible {
-      transition-delay: 0.4s;
+      transition-delay: 0.3s;
     }
 
     .close-btn {
